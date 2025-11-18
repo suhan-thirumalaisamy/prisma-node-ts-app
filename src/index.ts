@@ -50,6 +50,14 @@ app.get('/users', async (req: Request, res: Response) => {
   }
 });
 
+app.get('/health', async (req: Request, res: Response) => {
+  try {
+    res.status(200).json({ status: "OK" });
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong" });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Server ready at: http://localhost:${PORT}`);
 });
