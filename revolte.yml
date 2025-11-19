@@ -22,6 +22,8 @@ revolte:
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
               PORT: '8080'
+            preScript:
+              - npx prisma generate --schema=./prisma/schema.prisma
           specifications:
             cpu: 2
             memory: 2
