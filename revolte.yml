@@ -30,6 +30,7 @@ revolte:
               TEST_VAL: '#{TEST_VAL}'
               TEST_VAL_2: 'This contains #{testVal}'
               TEST_VAL_3: '#{testVal}'
+              DB_PORT: '#{db.dbPort}'
           specifications:
             cpu: 2
             memory: 2
