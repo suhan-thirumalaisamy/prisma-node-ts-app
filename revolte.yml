@@ -119,7 +119,7 @@ revolte:
               - npx prisma migrate dev --name init
           specifications:
             cpu: 2
-            memory: 1
+            memory: 2
             storage: 30
         rid_2:
           type: DATABASE
