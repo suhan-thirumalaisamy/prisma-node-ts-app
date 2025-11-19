@@ -15,14 +15,18 @@ revolte:
             port: 8080
             variables:
               BASE_URL: /api/v1
-              DATABASE_URL: '#{db.dbUrl}'
+              DATABASE_URL: >-
+                #{db.engine}://#{db.dbUsername}:#{db.dbPassword}@#{db.dbUrl}:#{db.dbPort}/#{db.dbName}
               DATABASE_PORT: '#{db.dbPort}'
               DATABASE_USERNAME: '#{db.dbUsername}'
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
+              PORT: '8080'
+            preScript:
+              - npx prisma migrate dev --name init
           specifications:
             cpu: 2
-            memory: 1
+            memory: 2
             storage: 30
         rid_2:
           type: DATABASE
