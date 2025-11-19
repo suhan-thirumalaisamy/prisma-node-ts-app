@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "tsc && cp -r prisma build/prisma",
-    "postinstall": "prisma generate",
+    "postinstall": "DATABASE_URL=file:./dev.db prisma generate",
     "start": "prisma migrate deploy && node index.js"
   },
   "keywords": [],
