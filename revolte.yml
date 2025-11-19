@@ -21,6 +21,11 @@ revolte:
               DATABASE_USERNAME: '#{db.dbUsername}'
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
+              SAMPLE_NUMBER: 1234
+              SAMPLE_STRING: 'Hello World'
+              SAMPLE_PLACEHOLDER: '#{secretValue}'
+              SAMPLE_INVALID_1: '#{invalidValue}'
+              SAMPLE_INVALID_2: 'Value is #{db.invalidValue}'
               PORT: '8080'
           specifications:
             cpu: 2

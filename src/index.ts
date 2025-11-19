@@ -50,6 +50,23 @@ app.get('/users', async (req: Request, res: Response) => {
   }
 });
 
+app.get('/environment', async (req: Request, res: Response) => {
+  try {
+    const envVariables = {
+      db_username: process.env.DATABASE_URL,
+      db_password: process.env.DATABASE_PASSWORD,
+      sampleNumber: process.env.SAMPLE_NUMBER,
+      sampleString: process.env.SAMPLE_STRING,
+      samplePlaceholder: process.env.SAMPLE_PLACEHOLDER,
+      sampleInvalid1: process.env.SAMPLE_INVALID_1,
+      sampleInvalid2: process.env.SAMPLE_INVALID_2
+    };
+    res.json(envVariables);
+  } catch (error) {
+    res.status(500).json({ error: "Something went wrong" });
+  }
+});
+
 app.get('/health', async (req: Request, res: Response) => {
   try {
     res.status(200).json({ status: "OK" });
