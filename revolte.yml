@@ -1,7 +1,7 @@
 revolte:
   version: '1.0'
-  project: sample-prisma
-  appName: node-be
+  project: insights-check
+  appName: gcp-insights
   env:
     staging:
       branch: staging
@@ -21,7 +21,6 @@ revolte:
               DATABASE_USERNAME: '#{db.dbUsername}'
               DATABASE_PASSWORD: '#{db.dbPassword}'
               DATABASE_NAME: '#{db.dbName}'
-              SAMPLE_NUMBER: 1234
               SAMPLE_STRING: Hello World
               SAMPLE_PLACEHOLDER: '#{secretValue}'
               SAMPLE_INVALID_1: '#{invalidValue}'
@@ -31,6 +30,17 @@ revolte:
               TEST_VAL_2: 'This contains #{testVal}'
               TEST_VAL_3: '#{testVal}'
               DB_PORT: '#{db.dbPort}'
+          insights:
+            cpu:
+              - cpu_time_idle
+              - cpu_time_user
+              - cpu_time_system
+            swap:
+              - swap_used
+            disk:
+              - disk_used
+              - disk_free
+              - disk_total
           specifications:
             cpu: 2
             memory: 2
